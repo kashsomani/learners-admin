@@ -32,6 +32,9 @@ export async function getStudents() {
 export async function addStudent(student) {
   const res = await db.collection("students").add(student);
 }
+export async function sendEmail(email) {
+  const res = await db.collection("mail").add(email);
+}
 export async function deleteStudent(student) {
   const res = await db.collection("students").doc(student).delete();
 }

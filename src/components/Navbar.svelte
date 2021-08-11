@@ -7,7 +7,7 @@
   
 </script>
 
-<div class="fixed top-0 w-full h-1 ">
+<div class="fixed top-0 w-full h-1  text-center">
     <div class="p-4 grid grid-cols-7 place-items-center embossed m-4">
         <button class="depressed p-4 font-bold" on:click={signOutCheck}>Sign Out</button>
         <div class="col-span-2"></div>
