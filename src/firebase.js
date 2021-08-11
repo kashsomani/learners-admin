@@ -29,7 +29,12 @@ export async function getStudents() {
     return data;
   });
 }
-
+export async function addStudent(student) {
+  const res = await db.collection("students").add(student);
+}
+export async function deleteStudent(student) {
+  const res = await db.collection("students").doc(student).delete();
+}
 export async function signIn(email, password) {
   return await firebase
     .auth()

@@ -1,0 +1,17 @@
+<script>
+    import { logged_in_store } from "../stores/logged_in";
+    import {signOut} from '../firebase'
+    async function signOutCheck() {
+    logged_in_store.set(await signOut());
+  }
+  
+</script>
+
+<div class="fixed top-0 w-full h-1 ">
+    <div class="p-4 grid grid-cols-7 place-items-center embossed m-4">
+        <button class="depressed p-4 font-bold" on:click={signOutCheck}>Sign Out</button>
+        <div class="col-span-2"></div>
+        <div>LA Admin Console</div>
+        <div class="col-span-3"></div>
+    </div>
+</div>
