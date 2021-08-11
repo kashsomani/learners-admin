@@ -6,27 +6,28 @@
 	logged_in_store.subscribe((value) => {
 	  logged_in = value;
 	});
-  
-	
+	import Router from 'svelte-spa-router'
+	import {routes} from './router'
   </script>
   
   <main>
-	{#if logged_in}
-	  hi
+		{#if logged_in}
+		<Router {routes}/>
 	{:else}
 	  <Login/>
 	{/if}
-  </main>
+	</main>
   
   <style global lang="postcss">
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
 	main{
-		@apply p-2;
-	}
-	body{
 		background-color: #247f5c;
+		@apply font-bold text-xl flex h-full w-full items-center justify-items-center ;
 	}
+	*:focus {
+    outline: none;
+}
   </style>
   

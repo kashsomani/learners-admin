@@ -19,7 +19,16 @@ firebase.initializeApp(firebaseConfig);
 
 export const db = firebase.firestore();
 
-export const people = db.collection("students");
+export const students = db.collection("students");
+
+export async function getStudents() {
+  const snapshot = await db.collection("students").get();
+  return snapshot.docs.map((doc) => {
+    let data = doc.data();
+    data.id = doc.id;
+    return data;
+  });
+}
 
 export async function signIn(email, password) {
   return await firebase
