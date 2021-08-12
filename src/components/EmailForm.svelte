@@ -13,7 +13,7 @@
                 },
             };
             mes = "";
-            await sendEmail(email);
+            await sendEmail(email).then(alert("Email(s) sent to everyonee!"));
     }
     async function sendEmailToGrade() {
         let email = {
@@ -24,7 +24,7 @@
             },
         };
         mes = "";
-        await sendEmail(email);
+        await sendEmail(email).then(alert(`Email(s) sent to grade ${grade}!`));
     }
 </script>
 

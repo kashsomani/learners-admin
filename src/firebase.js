@@ -38,6 +38,9 @@ export async function sendEmail(email) {
 export async function deleteStudent(student) {
   const res = await db.collection("students").doc(student).delete();
 }
+export async function updateStudentGrade(student, grade) {
+  const res = await db.collection("students").doc(student).update({grade:grade});
+}
 export async function signIn(email, password) {
   return await firebase
     .auth()

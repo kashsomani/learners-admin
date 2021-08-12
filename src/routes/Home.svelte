@@ -9,7 +9,8 @@
   import EmailForm from "../components/EmailForm.svelte";
   import AddStudent from "../components/AddStudent.svelte";
   import { sortByEmail, sortByGrade, sortByName } from "../components/sorter";
-  
+  import graduate from '../components/graduate'
+
   let sorters = {sortByGrade, sortByName, sortByEmail}
   let sorter = sortByGrade;
 
@@ -17,7 +18,7 @@
     students_store.set(await getStudents());
   }
 
-  $: logged_in = false;
+  let logged_in = false;
 
   $: observer = firebase.auth().onAuthStateChanged(async (user) => {
     if (user) {
@@ -42,6 +43,9 @@
   function changeSorter(str){
     sorter = sorters[str]
   }
+  $:grade10 = students_temp.filter((el)=>el.grade === 10)
+  $:grade1_9 = students_temp.filter((el)=>el.grade !== 10)
+
 </script>
 
 <Navbar />
@@ -60,6 +64,8 @@
     </div>
     <EmailForm students={students_temp} />
     <AddStudent />
+    <button class="embossed p-2" on:click="{()=>{graduate(grade1_9,grade10)}}">Graduate Us</button>
+    
   </div>
 </div>
 <style lang="postcss">
