@@ -45,26 +45,6 @@
   #login-form {
     @apply grid grid-cols-1 place-items-stretch gap-2 m-auto;
   }
-  input {
-    border: none;
-    resize: none;
-    outline: none;
-    background: transparent;
-    @apply text-center;
-  }
-  .input-container {
-    @apply bg-transparent text-center w-96 p-2 m-1;
-  }
-  button {
-    border: none;
 
-    @apply font-bold text-xl mx-8 mt-2 h-16;
-  }
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    transition: background-color 5000s;
-    -webkit-text-fill-color: rgb(0, 0, 0) !important;
-  }
+  
 </style>
