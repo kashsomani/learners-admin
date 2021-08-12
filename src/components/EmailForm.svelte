@@ -23,7 +23,6 @@
                 text: mes,
             },
         };
-        mes = "";
         await sendEmail(email).then(alert(`Email(s) sent to grade ${grade}!`));
     }
 </script>
