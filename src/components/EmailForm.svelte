@@ -33,7 +33,7 @@
         <input class="font-bold" type="text" bind:value={subject} placeholder="Subject" />
     </div>
     <div class="textarea-container depressed">
-        <textarea type="text" bind:value={mes} />
+        <textarea type="text" bind:value={mes} placeholder="Write email here..."/>
     </div>
     <div class="grid grid-cols-7 place-items-center mt-2">
         <div class="col-span-3">

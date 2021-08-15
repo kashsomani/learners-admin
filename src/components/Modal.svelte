@@ -10,7 +10,7 @@
     alert("Students graduated!")
     }
 
-</script>r
+</script>
 <div class="fixed inset-0 bg-green-900 opacity-80 grid grid-cols-1 place-items-center">
     <div class="w-60 h-60 bg-green-200 opacity-80 rounded-xl grid grid-cols-1 place-items-center">
         <div class="text-center">
