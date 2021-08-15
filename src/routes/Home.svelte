@@ -59,17 +59,17 @@
   <div class="h-32" />
   <div class="grid grid-cols-1">
     <div class="grid grid-cols-1">
-      <div class="grid grid-cols-3">
-        <button class="depressed" on:click="{()=>changeSorter("sortByEmail")}"> Sort By Email</button>
-        <button class="depressed" on:click="{()=>changeSorter("sortByGrade")}"> Sort By Grade</button>
-        <button class="depressed" on:click="{()=>changeSorter("sortByName")}"> Sort By Name</button>
+      <div class="grid grid-cols-3 ">
+        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByEmail")}"> Sort By Email</button>
+        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByGrade")}"> Sort By Grade</button>
+        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByName")}"> Sort By Name</button>
   
       </div>
       <Students students={students_temp} />
     </div>
     <EmailForm students={students_temp} />
     <AddStudent />
-    <button class="embossed p-2" on:click="{()=>{showModal.set(true)}}">Graduate Us</button>
+    <button class="embossed p-2 text-sm md:text-xl" on:click="{()=>{showModal.set(true)}}">Graduate Us</button>
     {#if showModal_local}
         <Modal students={students_temp}/>
     {/if}
