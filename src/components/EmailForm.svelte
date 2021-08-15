@@ -28,7 +28,7 @@
     }
 </script>
 
-<div class="grid grid-cols-1 place-items-center text-center">
+<div class="grid grid-cols-1 place-items-center text-center mt-4">
     <div class="input-container depressed ">
         <input class="font-bold" type="text" bind:value={subject} placeholder="Subject" />
     </div>
