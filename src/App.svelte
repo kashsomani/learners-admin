@@ -1,32 +1,32 @@
 <script>
-	import Layout from "./components/Layout.svelte";
+  import Layout from "./components/Layout.svelte";
 </script>
 
 <main>
-	<Layout />
+  <Layout />
 </main>
 
 <style global lang="postcss">
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-	main {
-		@apply w-full min-h-screen;
-	}
-	body {
-		@apply flex h-full w-full;
-	}
-	.depressed {
-		border-radius: 50px;
-		background: #247f5c;
-		box-shadow: inset 20px 20px 60px #1f6c4e, inset -20px -20px 60px #29926a;
-	}
-	.embossed {
-		border-radius: 50px;
-		background: #247f5c;
-		box-shadow: 23px 23px 54px #1c6449, -23px -23px 54px #2c9a6f;
-	}
-	input:-webkit-autofill,
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  main {
+    @apply w-full min-h-screen;
+  }
+  body {
+    @apply flex h-full w-full;
+  }
+  .depressed {
+    border-radius: 50px;
+    background: #247f5c;
+    box-shadow: inset 20px 20px 60px #1f6c4e, inset -20px -20px 60px #29926a;
+  }
+  .embossed {
+    border-radius: 50px;
+    background: #247f5c;
+    box-shadow: 23px 23px 54px #1c6449, -23px -23px 54px #2c9a6f;
+  }
+  input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
@@ -48,10 +48,10 @@
 
     @apply font-bold text-xl mx-8 mt-2 h-16 p-2;
   }
-  select{
-	border: none;
-        outline: none;
-        resize: none;
-        background: transparent;
+  select {
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
   }
 </style>

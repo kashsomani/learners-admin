@@ -11,10 +11,8 @@
             name = "";
             email = "";
             grade = 1;
-            phone ="";
-        }
-        else
-            alert("Name | Email | Phone cannot be empty")
+            phone = "";
+        } else alert("Name | Email | Phone cannot be empty");
     }
 </script>
 
@@ -47,13 +45,13 @@
 </div>
 
 <style>
-    div{
+    div {
         @apply text-sm md:text-xl;
     }
     select {
         outline: none;
     }
-    input{
+    input {
         @apply font-bold;
     }
     ::placeholder {

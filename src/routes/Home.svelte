@@ -9,11 +9,10 @@
   import EmailForm from "../components/EmailForm.svelte";
   import AddStudent from "../components/AddStudent.svelte";
   import { sortByEmail, sortByGrade, sortByName } from "../components/sorter";
-  import Modal from '../components/Modal.svelte'
+  import Modal from "../components/Modal.svelte";
   import { showModal } from "../stores/show_modal";
 
-
-  let sorters = {sortByGrade, sortByName, sortByEmail}
+  let sorters = { sortByGrade, sortByName, sortByEmail };
   let sorter = sortByGrade;
 
   async function get() {
@@ -42,15 +41,14 @@
     students_temp = sorter(value) || sortByGrade(value);
   });
 
-  function changeSorter(str){
-    sorter = sorters[str]
+  function changeSorter(str) {
+    sorter = sorters[str];
   }
-  
 
   let showModal_local = false;
   showModal.subscribe((value) => {
-        showModal_local = value;
-    });
+    showModal_local = value;
+  });
 </script>
 
 <Navbar />
@@ -60,24 +58,44 @@
   <div class="grid grid-cols-1">
     <div class="grid grid-cols-1">
       <div class="grid grid-cols-3 mt-2">
-        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByEmail")}"> Sort By Email</button>
-        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByGrade")}"> Sort By Grade</button>
-        <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByName")}"> Sort By Name</button>
-  
+        <button
+          class="depressed text-sm md:text-xl"
+          on:click={() => changeSorter("sortByEmail")}
+        >
+          Sort By Email</button
+        >
+        <button
+          class="depressed text-sm md:text-xl"
+          on:click={() => changeSorter("sortByGrade")}
+        >
+          Sort By Grade</button
+        >
+        <button
+          class="depressed text-sm md:text-xl"
+          on:click={() => changeSorter("sortByName")}
+        >
+          Sort By Name</button
+        >
       </div>
       <Students students={students_temp} />
     </div>
     <EmailForm students={students_temp} />
     <AddStudent />
-    <button class="embossed p-2 text-sm md:text-xl" on:click="{()=>{showModal.set(true)}}">Graduate Us</button>
+    <button
+      class="embossed p-2 text-sm md:text-xl"
+      on:click={() => {
+        showModal.set(true);
+      }}>Graduate Us</button
+    >
     {#if showModal_local}
-        <Modal students={students_temp}/>
+      <Modal students={students_temp} />
     {/if}
   </div>
   <div class="h-24" />
 </div>
+
 <style lang="postcss">
-  button{
+  button {
     @apply p-2;
   }
 </style>

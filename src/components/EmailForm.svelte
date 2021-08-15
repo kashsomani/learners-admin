@@ -6,15 +6,15 @@
     let subject = "";
     let grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     async function sendEmailToAll() {
-            let email = {
-                to: students.map((el) => el.email),
-                message: {
-                    subject: subject,
-                    text: mes,
-                },
-            };
-            mes = "";
-            await sendEmail(email).then(alert("Email(s) sent to everyonee!"));
+        let email = {
+            to: students.map((el) => el.email),
+            message: {
+                subject: subject,
+                text: mes,
+            },
+        };
+        mes = "";
+        await sendEmail(email).then(alert("Email(s) sent to everyonee!"));
     }
     async function sendEmailToGrade() {
         let email = {
@@ -30,15 +30,25 @@
 
 <div class="grid grid-cols-1 place-items-center text-center mt-4">
     <div class="input-container depressed ">
-        <input class="font-bold" type="text" bind:value={subject} placeholder="Subject" />
+        <input
+            class="font-bold"
+            type="text"
+            bind:value={subject}
+            placeholder="Subject"
+        />
     </div>
     <div class="textarea-container depressed">
-        <textarea type="text" bind:value={mes} placeholder="Write email here..."/>
+        <textarea
+            type="text"
+            bind:value={mes}
+            placeholder="Write email here..."
+        />
     </div>
     <div class="grid grid-cols-7 place-items-center mt-2">
         <div class="col-span-3">
-            <button class="embossed p-4 font-bold text-xs md:text-xl" on:click={sendEmailToAll}
-                >Send email to all</button
+            <button
+                class="embossed p-4 font-bold text-xs md:text-xl"
+                on:click={sendEmailToAll}>Send email to all</button
             >
         </div>
         <div>OR</div>
@@ -61,7 +71,6 @@
 </div>
 
 <style lang="postcss">
-    
     textarea {
         border: none;
         outline: none;
@@ -78,7 +87,7 @@
         opacity: 1; /* Firefox */
         @apply font-bold;
     }
-    div{
+    div {
         @apply text-sm md:text-xl;
     }
 </style>
