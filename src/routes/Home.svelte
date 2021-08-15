@@ -10,6 +10,7 @@
   import AddStudent from "../components/AddStudent.svelte";
   import { sortByEmail, sortByGrade, sortByName } from "../components/sorter";
   import graduate from '../components/graduate'
+  import Modal from '../components/Modal.svelte'
 
   let sorters = {sortByGrade, sortByName, sortByEmail}
   let sorter = sortByGrade;
@@ -46,6 +47,8 @@
   $:grade10 = students_temp.filter((el)=>el.grade === 10)
   $:grade1_9 = students_temp.filter((el)=>el.grade !== 10)
 
+  let showModal = false;
+  // ()=>{graduate(grade1_9,grade10)
 </script>
 
 <Navbar />
@@ -64,8 +67,10 @@
     </div>
     <EmailForm students={students_temp} />
     <AddStudent />
-    <button class="embossed p-2" on:click="{()=>{graduate(grade1_9,grade10)}}">Graduate Us</button>
-    
+    <button class="embossed p-2" on:click="{()=>{showModal = !showModal}}">Graduate Us</button>
+    {#if showModal}
+        <Modal/>
+    {/if}
   </div>
 </div>
 <style lang="postcss">
