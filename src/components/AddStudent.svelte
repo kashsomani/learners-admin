@@ -43,16 +43,23 @@
     <div class="input-container depressed">
         <input type="text" bind:value={phone} placeholder="Phone" />
     </div>
-    <button class="embossed p-4" on:click={add}>Add</button>
+    <button class="embossed p-4 text-sm md:text-xl" on:click={add}>Add</button>
 </div>
 
 <style>
+    div{
+        @apply text-sm md:text-xl;
+    }
     select {
         outline: none;
+    }
+    input{
+        @apply font-bold;
     }
     ::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: black;
         opacity: 1; /* Firefox */
+        @apply font-bold;
     }
 </style>

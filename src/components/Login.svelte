@@ -30,7 +30,7 @@
     </div>
 
     <button
-      class="embossed"
+      class="embossed font-bold"
       on:click={() => {
         signInWithCheck(email, password);
       }}>LOGIN</button
@@ -45,6 +45,7 @@
   #login-form {
     @apply grid grid-cols-1 place-items-stretch gap-2 m-auto;
   }
-
-  
+  input{
+    @apply font-semibold;
+  }
 </style>
