@@ -9,8 +9,9 @@
   import EmailForm from "../components/EmailForm.svelte";
   import AddStudent from "../components/AddStudent.svelte";
   import { sortByEmail, sortByGrade, sortByName } from "../components/sorter";
-  import graduate from '../components/graduate'
   import Modal from '../components/Modal.svelte'
+  import { showModal } from "../stores/show_modal";
+
 
   let sorters = {sortByGrade, sortByName, sortByEmail}
   let sorter = sortByGrade;
@@ -44,11 +45,12 @@
   function changeSorter(str){
     sorter = sorters[str]
   }
-  $:grade10 = students_temp.filter((el)=>el.grade === 10)
-  $:grade1_9 = students_temp.filter((el)=>el.grade !== 10)
+  
 
-  let showModal = false;
-  // ()=>{graduate(grade1_9,grade10)
+  let showModal_local = false;
+  showModal.subscribe((value) => {
+        showModal_local = value;
+    });
 </script>
 
 <Navbar />
@@ -67,9 +69,9 @@
     </div>
     <EmailForm students={students_temp} />
     <AddStudent />
-    <button class="embossed p-2" on:click="{()=>{showModal = !showModal}}">Graduate Us</button>
-    {#if showModal}
-        <Modal/>
+    <button class="embossed p-2" on:click="{()=>{showModal.set(true)}}">Graduate Us</button>
+    {#if showModal_local}
+        <Modal students={students_temp}/>
     {/if}
   </div>
 </div>

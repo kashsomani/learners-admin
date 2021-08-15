@@ -2,17 +2,19 @@
     import { addStudent } from "../firebase";
     let name = "";
     let email = "";
+    let phone = "";
     let grade = 1;
     let grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     async function add() {
-        if (name && email) {
-            await addStudent({ name, email, grade });
+        if (name && email && phone) {
+            await addStudent({ name, email, grade, phone });
             name = "";
             email = "";
             grade = 1;
+            phone ="";
         }
         else
-            alert("Name | Email cannot be empty")
+            alert("Name | Email | Phone cannot be empty")
     }
 </script>
 
@@ -37,6 +39,9 @@
     </div>
     <div class="input-container depressed">
         <input type="text" bind:value={email} placeholder="Email" />
+    </div>
+    <div class="input-container depressed">
+        <input type="text" bind:value={phone} placeholder="Phone" />
     </div>
     <button class="embossed p-4" on:click={add}>Add</button>
 </div>
