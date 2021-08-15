@@ -56,7 +56,7 @@
 <Navbar />
 
 <div class="h-full w-full">
-  <div class="h-32" />
+  
   <div class="grid grid-cols-1">
     <div class="grid grid-cols-1">
       <div class="grid grid-cols-3 ">
@@ -74,6 +74,7 @@
         <Modal students={students_temp}/>
     {/if}
   </div>
+  <div class="h-24" />
 </div>
 <style lang="postcss">
   button{
