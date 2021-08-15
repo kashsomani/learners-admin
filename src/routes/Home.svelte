@@ -56,10 +56,10 @@
 <Navbar />
 
 <div class="h-full w-full">
-  
+  <div class="h-32" />
   <div class="grid grid-cols-1">
     <div class="grid grid-cols-1">
-      <div class="grid grid-cols-3 ">
+      <div class="grid grid-cols-3 mt-2">
         <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByEmail")}"> Sort By Email</button>
         <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByGrade")}"> Sort By Grade</button>
         <button class="depressed text-sm md:text-xl" on:click="{()=>changeSorter("sortByName")}"> Sort By Name</button>
