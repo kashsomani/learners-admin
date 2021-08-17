@@ -4,21 +4,21 @@
     let email = "";
     let phone = "";
     let grade = 1;
-    let grades = ["Nursery", "LKG", "HKG",1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let grades = ["Nursery", "LKG", "HKG", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     async function add() {
         if (name && email && phone) {
-            await addStudent({ name, email, "grade":gradeMapper, phone });
+            await addStudent({ name, email, grade: gradeMapper, phone });
             name = "";
             email = "";
             phone = "";
         } else alert("Name | Email | Phone cannot be empty");
     }
     let map = {
-            "Nursery":-2,
-            "LKG":-1,
-            "HKG":0
-        }
-    $:gradeMapper = isNaN(grade)? map[grade] : grade
+        Nursery: -2,
+        LKG: -1,
+        HKG: 0,
+    };
+    $: gradeMapper = isNaN(grade) ? map[grade] : grade;
 </script>
 
 <div class="grid grid-cols-1 place-items-center mt-4">

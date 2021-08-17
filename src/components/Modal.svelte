@@ -21,14 +21,21 @@
             This action is irreversible please confirm graduation:
         </div>
         <div class="grid grid-cols-2 mx-auto">
-            <div  class="bg-red-500 opacity-95 m-2 grid grid-cols-1 place-items-center" >
-                <button on:click="{()=>showModal.set(false)}" class="text-sm text-center">CANCEL</button>
-
+            <div
+                class="bg-red-500 opacity-95 m-2 grid grid-cols-1 place-items-center"
+            >
+                <button
+                    on:click={() => showModal.set(false)}
+                    class="text-sm text-center">CANCEL</button
+                >
             </div>
-            <div  class="bg-yellow-500 opacity-95 m-2  grid grid-cols-1 place-items-center">
-                <button on:click={graduate_local} class="text-sm">CONFIRM</button>
+            <div
+                class="bg-yellow-500 opacity-95 m-2  grid grid-cols-1 place-items-center"
+            >
+                <button on:click={graduate_local} class="text-sm"
+                    >CONFIRM</button
+                >
             </div>
         </div>
-        
     </div>
 </div>
