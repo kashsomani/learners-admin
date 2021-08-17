@@ -10,7 +10,6 @@
             await addStudent({ name, email, "grade":gradeMapper, phone });
             name = "";
             email = "";
-            grade = -2;
             phone = "";
         } else alert("Name | Email | Phone cannot be empty");
     }
