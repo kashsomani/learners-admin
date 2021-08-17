@@ -4,7 +4,7 @@
     $: mes = "";
     let grade = 1;
     let subject = "";
-    let grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let grades = ["Nursery", "LKG", "HKG",1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     async function sendEmailToAll() {
         let email = {
             to: students.map((el) => el.email),
@@ -19,7 +19,7 @@
     }
     async function sendEmailToGrade() {
         let email = {
-            to: students.filter((e) => e.grade === grade).map((el) => el.email),
+            to: students.filter((e) => e.grade === gradeMapper).map((el) => el.email),
             message: {
                 subject: subject,
                 text: mes,
@@ -27,6 +27,12 @@
         };
         await sendEmail(email).then(alert(`Email(s) sent to grade ${grade}!`));
     }
+    let map = {
+            "Nursery":-2,
+            "LKG":-1,
+            "HKG":0
+        }
+    $:gradeMapper = isNaN(grade)? map[grade] : grade
 </script>
 
 <div class="grid grid-cols-1 place-items-center text-center mt-4">

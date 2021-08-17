@@ -1,6 +1,12 @@
 <script>
     export let students;
     import { deleteStudent } from "../firebase";
+    let map = {
+            "-2":"Nursery",
+            "-1":"LKG",
+            "0":"HKG"
+        }
+    let gradeMapper = (grade)=> grade < 1? map[grade.toString()] : grade
 </script>
 
 <div class="grid grid-cols-2">
@@ -10,7 +16,7 @@
         >
             <div>Name : {name}</div>
             <div>Email : {email}</div>
-            <div>Grade : {grade}</div>
+            <div>Grade : {gradeMapper(grade)}</div>
             <div>Phone : {phone}</div>
             <div>ID : {id}</div>
             <div>
