@@ -23,10 +23,10 @@
 <div id="container" class="embossed">
   <div id="login-form">
     <div class="input-container depressed">
-      <input type="text" bind:value={email} on:keydown={enter} />
+      <input type="text" bind:value={email} on:keydown={enter} placeholder="Email"/>
     </div>
     <div class="input-container depressed">
-      <input type="password" bind:value={password} on:keydown={enter} />
+      <input type="password" bind:value={password} on:keydown={enter} placeholder="Password" />
     </div>
 
     <button
@@ -47,5 +47,8 @@
   }
   input {
     @apply font-semibold;
+  }
+  ::placeholder{
+    @apply text-black;
   }
 </style>
