@@ -49,7 +49,7 @@
     <button class="embossed p-4 text-sm md:text-xl" on:click={add}>Add</button>
 </div>
 
-<style>
+<style lang="postcss">
     div {
         @apply text-sm md:text-xl;
     }
