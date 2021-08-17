@@ -13,6 +13,7 @@
                 text: mes,
             },
         };
+        subject="";
         mes = "";
         await sendEmail(email).then(alert("Email(s) sent to everyonee!"));
     }
