@@ -45,7 +45,7 @@
   #login-form {
     @apply grid grid-cols-1 place-items-stretch gap-2 m-auto;
   }
-  input{
+  input {
     @apply font-semibold;
   }
 </style>

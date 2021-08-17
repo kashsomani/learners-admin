@@ -14,7 +14,7 @@
             <div>Phone : {phone}</div>
             <div>ID : {id}</div>
             <div>
-                <button class="depressed" on:click={deleteStudent(id)}>X</button
+                <button class="depressed " on:click={deleteStudent(id)}>Delete</button
                 >
             </div>
         </div>

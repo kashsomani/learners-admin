@@ -27,12 +27,12 @@
     </div>
 </div>
 
-<style lang="postcss">
+<style global lang="postcss">
     #main {
         background-color: #247f5c;
         @apply font-bold text-xl flex h-full w-full items-center justify-items-center;
     }
-    *:focus {
-        outline: none;
+    button:focus {
+        outline: 1px dashed black;
     }
 </style>
