@@ -49,6 +49,6 @@
     @apply font-semibold;
   }
   ::placeholder{
-    @apply text-black;
+    @apply text-black font-bold;
   }
 </style>
