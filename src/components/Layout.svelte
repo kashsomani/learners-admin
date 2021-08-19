@@ -35,4 +35,7 @@
     button:focus {
         outline: 1px dashed black;
     }
+    button{
+        @apply hover:underline;
+    }
 </style>
